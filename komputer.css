@@ -1,0 +1,479 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Bebas Neue", serif;
+    font-weight: 400;
+    font-style: normal;
+    scroll-behavior: smooth;
+  }
+
+  body.no-scroll {
+    overflow: hidden;
+  }
+
+  .icon-size{
+    width: 60px;
+    height: 60px;
+  }
+
+  body {
+    background: 	#333333;
+    color: #fff;
+  }
+  .main-content {
+    transition: filter 0.3s ease; /* Efek transisi untuk smooth blur */
+    } 
+  
+    /* Keadaan blur */
+  .main-content.blur {
+    filter: blur(5px); /* Atur tingkat blur sesuai kebutuhan */
+  }
+
+  .home {
+    position: relative;
+    background-image: url('thumb_8komponenpentingdalamkomputergamingjpg.jpg'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.8); /* Bayangan hitam */
+}
+
+/* Overlay untuk menggelapkan gambar */
+.home::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Ubah nilai opacity (0.1 - 1) untuk menyesuaikan gelapnya */
+    z-index: 1;
+}
+
+/* Agar konten di dalamnya tetap terlihat */
+.home * {
+    position: relative;
+    z-index: 2;
+}
+
+/* Add transition effect to navbar */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 15px 200px;
+  background: rgba(3, 52, 110, 10);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+  z-index: 1000;
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+/* When scrolling down, navbar hides */
+.nav.hidden {
+    transform: translateY(-100px); 
+}
+
+  .nav,
+  .nav .nav-links {
+    display: flex;
+    align-items: center;
+  }
+
+  .nav {
+    justify-content: space-between;
+  }
+
+  a {
+    color: #fff;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  .nav .logo {
+    font-size: 22px;
+    font-weight: 500;
+  }
+
+  .nav .nav-links {
+    column-gap: 25px;
+    list-style: none;
+  }
+
+  .nav .nav-links a {
+    transition: all 0.2s linear;
+  }
+
+  .nav .nav-links a:hover{
+    color:#fff;
+  }
+
+  .nav .nav-links a::after {
+    content: '';
+    display: block;
+    padding-bottom: 0.5rem;
+    border-bottom: 0.1rem solid #fff;
+    transform: scaleX(0); 
+    transform-origin:center; 
+    transition: transform 0.3s ease-out; /
+  }
+  
+  .nav .nav-links a:hover::after {
+    transform: scaleX(1); 
+  }
+
+  .nav.openSearch .nav-links a {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .nav .search-icon {
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+  }
+
+  .nav .search-box {
+    position: absolute;
+    right: 250px;
+    height: 45px;
+    max-width: 555px;
+    width: 100%;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.2s linear;
+  }
+
+  .nav.openSearch .search-box {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .search-box .search-icon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    left: 15px;
+    color: #4a98f7;
+    transform: translateY(-50%);
+  }
+  
+
+  .search-box input {
+    height: 100%;
+    width: 100%;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    background-color: #fff;
+    padding: 0 15px 0 45px;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .nav .navOpenBtn,
+  .nav .navCloseBtn {
+    display: none;
+  }
+
+  .home {
+    padding: 300px 80px;
+    padding-top: 390px;
+}
+
+.home h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 60px;
+}
+
+.home p {
+    padding: 0 80px;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    line-height: 1.6;
+}
+
+
+.penjelasan {
+  margin-top: 70px;  
+  padding: 0 80px; 
+  }
+  
+  .penjelasan h1 {
+    font-size: 55px;
+    margin-bottom: 20px; 
+    text-align: center;
+  }
+  
+  .penjelasan h2 {
+    font-size: 32px;
+    margin-bottom: 15px;
+  }
+  
+  .penjelasan p {
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 20px; 
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .penjelasan ul {
+    padding-left: 20px; 
+    margin-bottom: 20px;
+  }
+  
+  .penjelasan ul li {
+    font-size: 16px;
+    line-height: 1.6; 
+    margin-bottom: 10px; 
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .penjelasan strong {
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  .contoh-peran h2 {
+    font-size: 25px;
+  }
+  .bawah p {
+    padding-bottom: 80px;
+  }
+  
+  @media screen and (max-width: 1160px) {
+    .nav {
+      padding: 15px 100px;
+    }
+    .nav .search-box {
+      right: 150px;
+    }
+  }
+  @media screen and (max-width: 1160px) {
+    .nav {
+      padding: 15px 50px;
+    }
+    .nav .search-box {
+      right: 100px;
+      max-width: 400px;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    
+    .nav .navOpenBtn,
+    .nav .navCloseBtn {
+      display: block;
+    }
+    .nav {
+      padding: 15px 20px;
+    }
+    .nav .nav-links {
+      position: fixed;
+      top: 0;
+      left: -100%;
+      height: 100%;
+      max-width: 280px;
+      width: 100%;
+      padding-top: 100px;
+      row-gap: 30px;
+      flex-direction: column;
+      background-color: #11101d;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      transition: all 0.4s ease;
+      z-index: 100;
+    }
+    .nav.openNav .nav-links {
+      left: 0;
+    }
+    .nav .navOpenBtn {
+      color: #fff;
+      font-size: 20px;
+      cursor: pointer;
+    }
+    .nav .navCloseBtn {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      color: #fff;
+      font-size: 20px;
+      cursor: pointer;
+    }
+    .nav .search-box {
+      top: calc(100% + 10px);
+      max-width: calc(100% - 20px);
+      right: 50%;
+      transform: translateX(50%);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .home {
+        padding: 250px 50px;
+    }
+    
+    .home h3 {
+        margin-top: 120px;
+        font-size: 40px;
+    }
+    
+    .home p {
+        text-align: center;
+        padding: 0;
+        font-size: 15px;
+    }
+    .penjelasan {
+        padding: 0 50px;
+    }
+    
+    .penjelasan h1 {
+        padding-bottom: 20px;
+    }
+
+    .penjelasan h2 {
+        font-size: 28px;
+    }
+
+    .penjelasan p {
+        font-size: 15px;
+    }
+    .contoh-peran h2 {
+        font-size: 25px;
+    }
+  }
+
+
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+  .footer .container {
+    display: flex;
+    align-items: center; 
+    justify-content: space-between;
+    max-width: 1170px;
+    margin: auto;
+    flex-wrap: wrap;
+}
+
+
+.footer img {
+    width: 100px;
+    height: auto;
+    margin-right: 20px;
+}
+
+
+.footer .row {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1;
+}
+
+
+
+.footer ul{
+	list-style: none;
+}
+
+.footer{
+	background-color: #24262b;
+    padding: 70px 0;
+}
+
+.footer-col{
+   width: 25%;
+   padding: 0 15px;
+}
+
+.footer-col h4{
+	font-size: 18px;
+	color: #ffffff;
+	text-transform: capitalize;
+	margin-bottom: 35px;
+	font-weight: 500;
+	position: relative;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.footer-col h4::before{
+	content: '';
+	position: absolute;
+	left:0;
+	bottom: -10px;
+	background-color: #e91e63;
+	height: 2px;
+	box-sizing: border-box;
+	width: 50px;
+}
+
+.footer-col ul li:not(:last-child){
+	margin-bottom: 10px;
+}
+
+.footer-col ul li a{
+	font-size: 16px;
+	text-transform: capitalize;
+	color: #ffffff;
+	text-decoration: none;
+	font-weight: 300;
+	color: #bbbbbb;
+	display: block;
+	transition: all 0.3s ease;
+}
+
+.footer-col ul li a:hover{
+	color: #ffffff;
+	padding-left: 8px;
+}
+
+.footer-col .social-links a{
+	display: inline-block;
+	height: 40px;
+	width: 40px;
+	background-color: rgba(255,255,255,0.2);
+	margin:0 10px 10px 0;
+	text-align: center;
+	line-height: 40px;
+	border-radius: 50%;
+	color: #ffffff;
+	transition: all 0.5s ease;
+}
+
+.footer-col .social-links a:hover{
+	color: #24262b;
+	background-color: #ffffff;
+}
+
+@media(max-width: 1116px){
+.footer img {
+  margin-left: 20px;
+}
+
+}
+
+@media(max-width: 767px){
+  
+  .footer-col{
+    width: 50%;
+    margin-bottom: 30px;
+}
+.footer img {
+  margin-left: 20px;
+}
+
+}
+
+@media(max-width: 574px){
+
+  .footer-col{
+    width: 100%;
+}
+
+}
