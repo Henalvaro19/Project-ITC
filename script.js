@@ -96,3 +96,22 @@ document.addEventListener("DOMContentLoaded", () => {
     mainContent.classList.remove("blur");
   });
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  let elements = document.querySelectorAll(".reveal");
+
+  function revealOnScroll() {
+    elements.forEach((el) => {
+      let windowHeight = window.innerHeight;
+      let elementTop = el.getBoundingClientRect().top;
+      let elementVisible = 150;
+
+      if (elementTop < windowHeight - elementVisible) {
+        el.classList.add("active");
+      }
+    });
+  }
+
+  window.addEventListener("scroll", revealOnScroll);
+  revealOnScroll();
+});
