@@ -8,6 +8,16 @@
     scroll-behavior: smooth;
   }
 
+  .reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+  }
+  
+  .reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
 
   .icon-size{
     width: 60px;
@@ -42,7 +52,7 @@
     margin: 0;
     padding: 0;
     overflow: hidden;
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.8); /* Bayangan hitam */
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.8); 
 }
 
 .nav {

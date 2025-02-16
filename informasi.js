@@ -5,7 +5,6 @@ const navCloseBtn = document.querySelector(".navCloseBtn");
 
 let lastScrollTop = 0;
 
-// Toggle Search Icon
 searchIcon.addEventListener("click", () => {
   nav.classList.toggle("openSearch");
   nav.classList.remove("openNav");
@@ -13,21 +12,21 @@ searchIcon.addEventListener("click", () => {
   searchIcon.classList.toggle("uil-times");
 });
 
-// Open Nav
+
 navOpenBtn.addEventListener("click", () => {
   nav.classList.add("openNav");
   nav.classList.remove("openSearch");
   searchIcon.classList.replace("uil-times", "uil-search");
 });
 
-// Close Nav
+
 navCloseBtn.addEventListener("click", () => {
   nav.classList.remove("openNav");
 });
 
-// Add scrolled class when the page is scrolled
+
 window.addEventListener("scroll", () => {
-  // Hanya jalankan efek scroll jika menu tidak terbuka
+
   if (!nav.classList.contains("openNav")) {
 
     if (window.scrollY > 10) {
@@ -36,7 +35,7 @@ window.addEventListener("scroll", () => {
       nav.classList.remove("scrolled");
     }
 
-    // Hide/Show Nav saat scroll
+
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
     if (scrollTop > lastScrollTop) {
       nav.classList.add("hidden");
@@ -48,7 +47,7 @@ window.addEventListener("scroll", () => {
 });
 
 window.addEventListener('load', () => {
-    // Scroll to the top of the page
+
     window.scrollTo(0, 0);
   });
 
@@ -59,16 +58,38 @@ window.addEventListener('load', () => {
     const navCloseBtn = document.querySelector(".navCloseBtn");
     const mainContent = document.querySelector(".main-content");
   
-    // Buka menu dan tambahkan efek blur
+
     navOpenBtn.addEventListener("click", () => {
       nav.classList.add("openNav");
       mainContent.classList.add("blur");
     });
   
-    // Tutup menu dan hilangkan efek blur
+
     navCloseBtn.addEventListener("click", () => {
       nav.classList.remove("openNav");
       mainContent.classList.remove("blur");
     });
+  });
+  
+
+  document.addEventListener("DOMContentLoaded", function () {
+    let elements = document.querySelectorAll(".reveal");
+  
+    function revealOnScroll() {
+      elements.forEach((el, index) => {
+        let windowHeight = window.innerHeight;
+        let elementTop = el.getBoundingClientRect().top;
+        let elementVisible = 200; // Muncul lebih lambat
+  
+        if (elementTop < windowHeight - elementVisible) {
+          setTimeout(() => {
+            el.classList.add("active");
+          }, index * 200); // Delay bertahap per elemen
+        }
+      });
+    }
+  
+    window.addEventListener("scroll", revealOnScroll);
+    revealOnScroll();
   });
   
