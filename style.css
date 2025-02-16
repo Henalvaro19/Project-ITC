@@ -277,6 +277,7 @@
   background: #000000;
   color: #fff;
   padding: 300px 80px;
+  z-index: 1;
 }
 
 .informasi-terbaru img {
@@ -316,6 +317,7 @@
   background: #000000;
   color: #fff;
   padding: 300px 80px;
+  z-index: 1;
 }
 
 .teknologi-ai h2 {
