@@ -117,7 +117,7 @@
   }
 
   .nav .nav-links {
-    column-gap: 25px;
+    column-gap: 60px;
     list-style: none;
   }
 
@@ -219,12 +219,12 @@
 .penjelasan {
     padding: 0 80px;
     margin-top: 40px;
+    text-align: justify;
   }
   
   .penjelasan h1 {
     font-size: 55px;
-    margin-bottom: 20px; 
-    text-align: center;
+    margin-bottom: 20px;
   }
   
   .penjelasan h2 {
