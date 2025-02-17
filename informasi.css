@@ -202,11 +202,13 @@
   .penjelasan h1 {
     font-size: 55px;
     margin-bottom: 20px;
+    align-items: center;
   }
   
   .penjelasan h2 {
     font-size: 32px;
     margin-bottom: 15px;
+    align-items: center;
   }
   
   .penjelasan p {
