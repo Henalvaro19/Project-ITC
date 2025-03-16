@@ -188,19 +188,20 @@
 .informasi {
   position: relative; 
   z-index: 1; 
-  padding: 50px 30px; 
+  padding: 50px 15px; 
   background: linear-gradient(to bottom, rgba(51, 51, 51, 0.9), #000000);
   overflow: hidden; 
   color: white;
 }
 
 .info-container {
-  padding: 30px 20px;
+  padding: 30px 15px;
 }
 
 .content-group {
   max-width: 1200px;
   margin: 0 auto;
+  width: 100%;
   color: #fff; 
 }
 
@@ -243,7 +244,7 @@
   width: 700px;
   position: absolute;
   left: -15%; 
-  top: 10%; /* Biarkan tetap di tengah */
+  top: 10%;
   filter: blur(5px) brightness(50%) grayscale(100%);
   z-index: -1;
 
@@ -717,8 +718,11 @@
       font-size: 25px;
     }
     .informasi {
-      padding: 50px; 
+      padding: 50px 10px; 
       margin-top: 60px; 
+    }
+    .info-container {
+      padding: 30px 10px;
     }
     .informasi h2 {
       font-size: 40px;
@@ -810,7 +814,7 @@
   }
 
 
-  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+ 
   .footer .container {
     display: flex;
     align-items: center; 
